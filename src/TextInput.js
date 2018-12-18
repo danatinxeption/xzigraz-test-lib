@@ -8,11 +8,16 @@ import HelperText from "./HelperText";
 class TextInput extends Component {
 	constructor(props) {
 		super(props);
-
+		
 		this.state = {
-			...props.options,
 			id: `${props.options.id}-${md5(props.options.id)}`,
+			helperText: props.options.helperText,
+			label: props.options.label,
+			maxNumber: props.options.maxNumber,
+			minNumber: props.options.minNumber,
+			inputValue: props.options.inputValue,
 			type: props.options.type ? props.options.type : 'text',
+			validationMessage: props.options.validationMessage,
 			isAmount: !!props.options.isAmount,
 			isPassword: !!props.options.isPassword,
 			isReadOnly: !!props.options.isReadOnly,
